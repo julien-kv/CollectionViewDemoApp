@@ -41,7 +41,7 @@ extension AeroplaneViewController:UICollectionViewDelegate,UICollectionViewDataS
 //        cell.layer.borderWidth=0.5
         cell.layer.cornerRadius=5
 //        cell.layer.borderColor=UIColor.black.cgColor
-//        cell.layer.borderWidth=2
+//        cell.layer.borderWidth=1
         return cell
         
     }
