@@ -13,8 +13,10 @@ class AeroplaneViewController: UIViewController {
     let AeroplaneArray=["aeroplane1","aeroplane2","aeroplane3","aeroplane4","aeroplane5","aeroplane6","aeroplane7","aeroplane8","aeroplane9","aeroplane10"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        //AeroplaneCollectionView.backgroundColor=UIColor(r)
         AeroplaneCollectionView.delegate=self
         AeroplaneCollectionView.dataSource=self
+        //AeroplaneCollectionView.collectionViewLayout=UICollectionViewFlowLayout()
         
     }
     
