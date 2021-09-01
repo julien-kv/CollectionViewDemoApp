@@ -12,6 +12,7 @@ class CarViewController: UIViewController {
     @IBOutlet weak var CarCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        CarCollectionView.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).cgColor
         // Do any additional setup after loading the view.
         CarCollectionView.delegate=self
         CarCollectionView.dataSource=self
@@ -27,7 +28,10 @@ extension CarViewController:UICollectionViewDelegate,UICollectionViewDataSource{
         let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "car", for: indexPath)
         let view=UIView()
         view.backgroundColor=UIColor(patternImage: UIImage(named: self.carArray[indexPath.row])!)
+        cell.layer.cornerRadius=5
         cell.backgroundView=view
+//        cell.layer.borderColor=UIColor.black.cgColor
+//        cell.layer.borderWidth=2
         return cell
     }
 }

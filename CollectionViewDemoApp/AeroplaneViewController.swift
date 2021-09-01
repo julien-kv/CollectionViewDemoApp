@@ -13,7 +13,9 @@ class AeroplaneViewController: UIViewController {
     let AeroplaneArray=["aeroplane1","aeroplane2","aeroplane3","aeroplane4","aeroplane5","aeroplane6","aeroplane7","aeroplane8","aeroplane9","aeroplane10"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        //AeroplaneCollectionView.backgroundColor=UIColor(r)
+        AeroplaneCollectionView.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).cgColor
+        //91363F
+        //AeroplaneCollectionView.backgroundColor=UIColor(red: 0x91, green: 0x36, blue: 0x3F, alpha: 1)
         AeroplaneCollectionView.delegate=self
         AeroplaneCollectionView.dataSource=self
         //AeroplaneCollectionView.collectionViewLayout=UICollectionViewFlowLayout()
@@ -33,7 +35,13 @@ extension AeroplaneViewController:UICollectionViewDelegate,UICollectionViewDataS
         let view=UIView()
         view.backgroundColor=UIColor(patternImage: UIImage(named: AeroplaneArray[indexPath.row])!)
         cell.backgroundView=view
-        
+//        cell.backgroundView?.contentMode = .scaleAspectFit
+//        cell.backgroundView?.clipsToBounds=true
+//        cell.layer.borderColor=UIColor.
+//        cell.layer.borderWidth=0.5
+        cell.layer.cornerRadius=5
+//        cell.layer.borderColor=UIColor.black.cgColor
+//        cell.layer.borderWidth=2
         return cell
         
     }
@@ -58,5 +66,6 @@ extension AeroplaneViewController:UICollectionViewDelegateFlowLayout{
         self.navigationController?.isNavigationBarHidden=false
         sender.view?.removeFromSuperview()
     }
+
     
 }

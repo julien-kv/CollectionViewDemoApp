@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         myTableView.dataSource=self
         myTableView.layer.cornerRadius=20
         setNavBar()
+        view.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).cgColor
     }
     func setNavBar(){
         let backButton = UIBarButtonItem()

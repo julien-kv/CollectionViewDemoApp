@@ -13,6 +13,7 @@ class BikeViewController: UIViewController {
     @IBOutlet weak var BikeCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        BikeCollectionView.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).cgColor
         BikeCollectionView.delegate=self
         BikeCollectionView.dataSource=self
 //        BikeCollectionView.collectionViewLayout=UICollectionViewFlowLayout()
@@ -32,6 +33,9 @@ extension BikeViewController:UICollectionViewDelegate,UICollectionViewDataSource
         let view=UIView()
         view.backgroundColor=UIColor(patternImage: UIImage(named: self.bikeArray[indexPath.row])!)
         cell.backgroundView=view
+        cell.layer.cornerRadius=5
+//        cell.layer.borderColor=UIColor.black.cgColor
+//        cell.layer.borderWidth=2
         return cell
     }
     
