@@ -23,21 +23,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="vCQ-qJ-meY"/>
                                 </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="0pY-eF-CZk">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0pY-eF-CZk" id="Ys7-P2-TOe">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.16862745098039217" green="0.25882352941176467" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.650599493252771" green="0.64854493999022922" blue="0.7693973183631897" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Imi-83-cVg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8MZ-kz-RQP"/>
                             <constraint firstItem="Imi-83-cVg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TYN-37-ic4"/>
@@ -87,7 +75,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U0O-zh-ROV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.16862745100000001" green="0.25882352939999997" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Gh-tq-eQ6" firstAttribute="leading" secondItem="U0O-zh-ROV" secondAttribute="leading" id="9Fd-8y-zu7"/>
                             <constraint firstItem="U0O-zh-ROV" firstAttribute="bottom" secondItem="6Gh-tq-eQ6" secondAttribute="bottom" id="RfV-NZ-Pcs"/>
@@ -112,9 +100,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="chevron.backward" catalog="system" backIndicatorTransitionMaskImage="backward" id="a3q-g2-CX9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.16862745098039217" green="0.25882352941176467" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.16862745100000001" green="0.25882352939999997" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="36"/>
+                            <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textShadowColor" systemColor="systemBackgroundColor"/>
                         </textAttributes>
@@ -158,7 +146,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rcg-Hu-nZH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.16862745100000001" green="0.25882352939999997" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Ytz-TG-8qA" firstAttribute="leading" secondItem="rcg-Hu-nZH" secondAttribute="leading" id="KUK-iR-Bnf"/>
                             <constraint firstItem="Ytz-TG-8qA" firstAttribute="top" secondItem="rcg-Hu-nZH" secondAttribute="top" id="aoe-k6-2Sg"/>
@@ -192,20 +180,11 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="aeroplane" id="HDG-lU-4Ew">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kre-xo-2Jw">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fej-od-gqj"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.16862745100000001" green="0.25882352939999997" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="fej-od-gqj" firstAttribute="trailing" secondItem="dKp-cU-Lqf" secondAttribute="trailing" id="BsN-WQ-CDw"/>
                             <constraint firstItem="dKp-cU-Lqf" firstAttribute="leading" secondItem="fej-od-gqj" secondAttribute="leading" id="bDV-tR-rcf"/>

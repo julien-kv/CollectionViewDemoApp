@@ -10,53 +10,44 @@ import UIKit
 class AeroplaneViewController: UIViewController {
     
     @IBOutlet weak var AeroplaneCollectionView: UICollectionView!
-    let AeroplaneArray=["aeroplane1","aeroplane2","aeroplane3","aeroplane4","aeroplane5","aeroplane6","aeroplane7","aeroplane8","aeroplane9","aeroplane10"]
     override func viewDidLoad() {
         super.viewDidLoad()
         AeroplaneCollectionView.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).cgColor
-        //91363F
-        //AeroplaneCollectionView.backgroundColor=UIColor(red: 0x91, green: 0x36, blue: 0x3F, alpha: 1)
         AeroplaneCollectionView.delegate=self
         AeroplaneCollectionView.dataSource=self
-        //AeroplaneCollectionView.collectionViewLayout=UICollectionViewFlowLayout()
-        
+        AeroplaneCollectionView.register(UINib(nibName: "MyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "reusablecell")
+        AeroplaneCollectionView.collectionViewLayout=UICollectionViewFlowLayout()
     }
-    
 }
-
 extension AeroplaneViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return AeroplaneArray.count
+        return AeroplaneCollectionArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let  cell=collectionView.dequeueReusableCell(withReuseIdentifier: "aeroplane", for: indexPath)
+        let  cell=collectionView.dequeueReusableCell(withReuseIdentifier: "reusablecell", for: indexPath) as! MyCollectionViewCell
         
-        let view=UIView()
-        view.backgroundColor=UIColor(patternImage: UIImage(named: AeroplaneArray[indexPath.row])!)
-        cell.backgroundView=view
-//        cell.backgroundView?.contentMode = .scaleAspectFit
-//        cell.backgroundView?.clipsToBounds=true
-//        cell.layer.borderColor=UIColor.
-//        cell.layer.borderWidth=0.5
-        cell.layer.cornerRadius=5
-//        cell.layer.borderColor=UIColor.black.cgColor
-//        cell.layer.borderWidth=1
+        cell.ImageCollectioncell.image=AeroplaneCollectionArray[indexPath.row].image
+        cell.CollectionCellTextLabel.text=AeroplaneCollectionArray[indexPath.row].label
         return cell
-        
     }
-    
-    
 }
 extension AeroplaneViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 200)
+            let nbCol = 2
+            let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+            let totalSpace = flowLayout.sectionInset.left
+                + flowLayout.sectionInset.right
+                + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
+            let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
+            return CGSize(width: size, height: size)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let imageView=UIImageView(image: UIImage(named: AeroplaneArray[indexPath.row]))
+        let imageView=UIImageView(image: AeroplaneCollectionArray[indexPath.row].image)
         imageView.frame=UIScreen.main.bounds
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.isUserInteractionEnabled=true
+        imageView.backgroundColor=UIColor(red: 0.17, green: 0.26, blue: 0.22, alpha: 1.00)
         self.navigationController?.isNavigationBarHidden=true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapImage)))
         self.view.addSubview(imageView)

@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         myTableView.layer.cornerRadius=20
         setNavBar()
         view.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).cgColor
+        myTableView.register(UINib(nibName:"MyTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
     func setNavBar(){
         let backButton = UIBarButtonItem()
@@ -33,17 +34,9 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text=tabledata[indexPath.row]
-        cell.textLabel?.textAlignment = .center
-
-        //Marker Felt Wide 36.0
+        let cell=tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyTableViewCell
         
-        cell.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0))
-        cell.textLabel?.textColor=UIColor.white
-        cell.textLabel?.font = UIFont(name:"Optima-bold", size: 20.0)
-        cell.layer.borderColor=UIColor.black.cgColor
-        cell.layer.borderWidth=1
+        cell.myTextLabel.text=tabledata[indexPath.row]
         return cell
     }
     

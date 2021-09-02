@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6B15C6F1-F409-40B5-A376-6B0F183B72D6"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E5899757-DCB3-4CDD-B3E3-D9CBE3DB11A5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionViewDemoApp/MyCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "MyCollectionViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "E5899757-DCB3-4CDD-B3E3-D9CBE3DB11A5 - 252117b454844360"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CollectionViewDemoApp.MyCollectionViewCell.CollectionCellImage.getter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "CollectionViewDemoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julien/Desktop/Development/CollectionViewDemoApp/CollectionViewDemoApp/MyCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "E5899757-DCB3-4CDD-B3E3-D9CBE3DB11A5 - 4364645d79cca96c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CollectionViewDemoApp.MyCollectionViewCell.CollectionCellImage.setter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "CollectionViewDemoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julien/Desktop/Development/CollectionViewDemoApp/CollectionViewDemoApp/MyCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "E5899757-DCB3-4CDD-B3E3-D9CBE3DB11A5 - aec2d3f29fa29163"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CollectionViewDemoApp.MyCollectionViewCell.CollectionCellImage.modify : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "CollectionViewDemoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julien/Desktop/Development/CollectionViewDemoApp/CollectionViewDemoApp/MyCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "E5899757-DCB3-4CDD-B3E3-D9CBE3DB11A5 - daffa00ffb36c165"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CollectionViewDemoApp.MyCollectionViewCell.CollectionCellImage.modify : Swift.Optional&lt;__C.UIImageView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CollectionViewDemoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julien/Desktop/Development/CollectionViewDemoApp/CollectionViewDemoApp/MyCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "E5899757-DCB3-4CDD-B3E3-D9CBE3DB11A5 - c79ef301cad37b31"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CollectionViewDemoApp.MyCollectionViewCell.init(frame: __C.CGRect) -&gt; CollectionViewDemoApp.MyCollectionViewCell"
+                  moduleName = "CollectionViewDemoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julien/Desktop/Development/CollectionViewDemoApp/CollectionViewDemoApp/MyCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "E5899757-DCB3-4CDD-B3E3-D9CBE3DB11A5 - ed926cbb3abe78b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CollectionViewDemoApp.MyCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CollectionViewDemoApp.MyCollectionViewCell&gt;"
+                  moduleName = "CollectionViewDemoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/julien/Desktop/Development/CollectionViewDemoApp/CollectionViewDemoApp/MyCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "117">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD0D56F8-DAB2-4C35-A2C2-22C65DEFED93"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CollectionViewDemoApp/MyCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "MyCollectionViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

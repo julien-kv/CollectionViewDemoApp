@@ -8,42 +8,46 @@
 import UIKit
 
 class CarViewController: UIViewController {
-    let carArray=["car1","car2","car3","car4","car5","car6","car7","car8","car9","car10"]    
+    
     @IBOutlet weak var CarCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         CarCollectionView.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).cgColor
-        // Do any additional setup after loading the view.
         CarCollectionView.delegate=self
         CarCollectionView.dataSource=self
         CarCollectionView.collectionViewLayout=UICollectionViewFlowLayout()
+        CarCollectionView.register(UINib(nibName: "MyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "reusablecell")
     }
 }
 extension CarViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return carArray.count
+        return CarcollectionArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "car", for: indexPath)
-        let view=UIView()
-        view.backgroundColor=UIColor(patternImage: UIImage(named: self.carArray[indexPath.row])!)
-        cell.layer.cornerRadius=5
-        cell.backgroundView=view
-//        cell.layer.borderColor=UIColor.black.cgColor
-//        cell.layer.borderWidth=2
+        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "reusablecell", for: indexPath) as! MyCollectionViewCell
+        cell.ImageCollectioncell.image=CarcollectionArray[indexPath.row].image
+        cell.CollectionCellTextLabel.text=CarcollectionArray[indexPath.row].label
+    
         return cell
     }
 }
 extension CarViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 200)
+        let nbCol = 2
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        let totalSpace = flowLayout.sectionInset.left
+            + flowLayout.sectionInset.right
+            + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
+        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
+        return CGSize(width: size, height: size)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let newImageView = UIImageView(image: UIImage(named: self.carArray[indexPath.row]))
+        let newImageView = UIImageView(image: CarcollectionArray[indexPath.row].image)
         newImageView.frame = UIScreen.main.bounds
-        newImageView.contentMode = .scaleAspectFill
+        newImageView.contentMode = .scaleAspectFit
         newImageView.isUserInteractionEnabled = true
+        newImageView.backgroundColor=UIColor(red: 0.17, green: 0.26, blue: 0.22, alpha: 1.00)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
         newImageView.addGestureRecognizer(tap)
