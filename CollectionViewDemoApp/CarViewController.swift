@@ -12,7 +12,7 @@ class CarViewController: UIViewController {
     @IBOutlet weak var CarCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        CarCollectionView.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).cgColor
+        CarCollectionView.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).withAlphaComponent(0.3).cgColor
         CarCollectionView.delegate=self
         CarCollectionView.dataSource=self
         CarCollectionView.collectionViewLayout=UICollectionViewFlowLayout()
@@ -43,7 +43,13 @@ extension CarViewController:UICollectionViewDelegateFlowLayout{
         newImageView.frame = UIScreen.main.bounds
         newImageView.contentMode = .scaleAspectFit
         newImageView.isUserInteractionEnabled = true
-        newImageView.backgroundColor=UIColor(red: 0.17, green: 0.26, blue: 0.22, alpha: 1.00)
+        
+        let image : UIImage = CarcollectionArray[indexPath.row].image
+        //Make sure point is within the image
+        let color : UIColor = image.getPixelColor(pos: CGPoint(x:0, y:0))
+
+        //newImageView.backgroundColor=UIColor(red: 0.17, green: 0.26, blue: 0.22, alpha: 1.00)
+        newImageView.backgroundColor=color
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
         newImageView.addGestureRecognizer(tap)
@@ -56,4 +62,24 @@ extension CarViewController:UICollectionViewDelegateFlowLayout{
         self.tabBarController?.tabBar.isHidden = false
         sender.view?.removeFromSuperview()
     }
+    
+    
+}
+
+extension UIImage {
+    func getPixelColor(pos: CGPoint) -> UIColor {
+
+        let pixelData = self.cgImage!.dataProvider!.data
+        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
+
+        let pixelInfo: Int = ((Int(self.size.width) * Int(pos.y)) + Int(pos.x)) * 4
+
+        let r = CGFloat(data[pixelInfo]) / CGFloat(255.0)
+        let g = CGFloat(data[pixelInfo+1]) / CGFloat(255.0)
+        let b = CGFloat(data[pixelInfo+2]) / CGFloat(255.0)
+        let a = CGFloat(data[pixelInfo+3]) / CGFloat(255.0)
+
+        return UIColor(red: r, green: g, blue: b, alpha: a)
+    }
+
 }

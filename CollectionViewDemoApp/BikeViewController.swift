@@ -11,7 +11,7 @@ class BikeViewController: UIViewController {
     @IBOutlet weak var BikeCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        BikeCollectionView.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).cgColor
+        BikeCollectionView.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).withAlphaComponent(0.3).cgColor
         BikeCollectionView.delegate=self
         BikeCollectionView.dataSource=self
         BikeCollectionView.collectionViewLayout=UICollectionViewFlowLayout()
@@ -44,7 +44,13 @@ extension BikeViewController:UICollectionViewDelegateFlowLayout{
         imageView.frame=UIScreen.main.bounds
         imageView.contentMode = .scaleAspectFit
         imageView.isUserInteractionEnabled=true
-        imageView.backgroundColor=UIColor(red: 0.17, green: 0.26, blue: 0.22, alpha: 1.00)
+        //imageView.backgroundColor=UIColor(red: 0.17, green: 0.26, blue: 0.22, alpha: 1.00)
+        let image : UIImage = BikeCollectionArray[indexPath.row].image
+        let color : UIColor = image.getPixelColor(pos: CGPoint(x:0, y:0))
+
+        imageView.backgroundColor=color
+        
+        
         let tap=UITapGestureRecognizer(target: self, action: #selector(dismissFullScreenImage))
         imageView.addGestureRecognizer(tap)
         self.view.addSubview(imageView)

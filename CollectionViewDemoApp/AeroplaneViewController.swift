@@ -12,7 +12,8 @@ class AeroplaneViewController: UIViewController {
     @IBOutlet weak var AeroplaneCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        AeroplaneCollectionView.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).cgColor
+        AeroplaneCollectionView.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).withAlphaComponent(0.3).cgColor
+        
         AeroplaneCollectionView.delegate=self
         AeroplaneCollectionView.dataSource=self
         AeroplaneCollectionView.register(UINib(nibName: "MyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: collectionviewcellidentifier)
@@ -48,7 +49,13 @@ extension AeroplaneViewController:UICollectionViewDelegateFlowLayout{
         imageView.frame=UIScreen.main.bounds
         imageView.contentMode = .scaleAspectFit
         imageView.isUserInteractionEnabled=true
-        imageView.backgroundColor=UIColor(red: 0.17, green: 0.26, blue: 0.22, alpha: 1.00)
+        //imageView.backgroundColor=UIColor(red: 0.17, green: 0.26, blue: 0.22, alpha: 1.00)
+        
+        
+        let image : UIImage = AeroplaneCollectionArray[indexPath.row].image
+        //Make sure point is within the image
+        let color : UIColor = image.getPixelColor(pos: CGPoint(x:0, y:0))
+        imageView.backgroundColor=color
         self.navigationController?.isNavigationBarHidden=true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapImage)))
         self.view.addSubview(imageView)

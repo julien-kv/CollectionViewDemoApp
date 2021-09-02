@@ -16,16 +16,16 @@ let collectionviewcellidentifier="reusablecell"
 
 let CarcollectionArray:[CollectionCellDataModel] =
     [
-        CollectionCellDataModel(image: UIImage(named: "car1")!, label: "Car 1"),
+        CollectionCellDataModel(image: UIImage(named: "car1")!, label: "Lamborghini Diablo"),
         CollectionCellDataModel(image: UIImage(named: "car2")!, label: "Car 2"),
         CollectionCellDataModel(image: UIImage(named: "car3")!, label: "Car 3"),
         CollectionCellDataModel(image: UIImage(named: "car4")!, label: "Car 4"),
         CollectionCellDataModel(image: UIImage(named: "car5")!, label: "Car 5"),
         CollectionCellDataModel(image: UIImage(named: "car6")!, label: "Car 6"),
         CollectionCellDataModel(image: UIImage(named: "car7")!, label: "Car 7"),
-        CollectionCellDataModel(image: UIImage(named: "car8")!, label: "Car 8"),
-        CollectionCellDataModel(image: UIImage(named: "car9")!, label: "Car 9"),
-        CollectionCellDataModel(image: UIImage(named: "car10")!, label: "Car 10")
+        CollectionCellDataModel(image: UIImage(named: "car8")!, label: "Morris Garages"),
+        CollectionCellDataModel(image: UIImage(named: "car9")!, label: "Legender"),
+        CollectionCellDataModel(image: UIImage(named: "car10")!, label: "Kia Seltos")
     ]
 let BikeCollectionArray:[CollectionCellDataModel] =
     [

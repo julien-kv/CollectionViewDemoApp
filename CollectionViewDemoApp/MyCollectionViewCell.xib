@@ -57,6 +57,7 @@
             <connections>
                 <outlet property="CollectionCellTextLabel" destination="Sp7-fu-ivc" id="aWg-fx-WLu"/>
                 <outlet property="ImageCollectioncell" destination="hdb-zy-kEI" id="Ang-Qm-BaM"/>
+                <outlet property="myView" destination="tmn-yx-7Hb" id="hG5-gg-LEz"/>
             </connections>
             <point key="canvasLocation" x="228.98550724637684" y="180.80357142857142"/>
         </collectionViewCell>
