@@ -16,7 +16,7 @@ class CarViewController: UIViewController {
         CarCollectionView.delegate=self
         CarCollectionView.dataSource=self
         CarCollectionView.collectionViewLayout=UICollectionViewFlowLayout()
-        CarCollectionView.register(UINib(nibName: "MyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "reusablecell")
+        CarCollectionView.register(UINib(nibName: "MyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: collectionviewcellidentifier)
     }
 }
 extension CarViewController:UICollectionViewDelegate,UICollectionViewDataSource{
@@ -25,7 +25,7 @@ extension CarViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "reusablecell", for: indexPath) as! MyCollectionViewCell
+        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: collectionviewcellidentifier, for: indexPath) as! MyCollectionViewCell
         cell.ImageCollectioncell.image=CarcollectionArray[indexPath.row].image
         cell.CollectionCellTextLabel.text=CarcollectionArray[indexPath.row].label
     
@@ -34,12 +34,8 @@ extension CarViewController:UICollectionViewDelegate,UICollectionViewDataSource{
 }
 extension CarViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let nbCol = 2
-        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-        let totalSpace = flowLayout.sectionInset.left
-            + flowLayout.sectionInset.right
-            + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
-        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
+        let size=getItemSize(collectionView: collectionView, collectionViewLayout: collectionViewLayout)
+        
         return CGSize(width: size, height: size)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

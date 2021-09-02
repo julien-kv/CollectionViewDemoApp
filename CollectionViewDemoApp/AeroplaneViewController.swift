@@ -15,7 +15,7 @@ class AeroplaneViewController: UIViewController {
         AeroplaneCollectionView.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).cgColor
         AeroplaneCollectionView.delegate=self
         AeroplaneCollectionView.dataSource=self
-        AeroplaneCollectionView.register(UINib(nibName: "MyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "reusablecell")
+        AeroplaneCollectionView.register(UINib(nibName: "MyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: collectionviewcellidentifier)
         AeroplaneCollectionView.collectionViewLayout=UICollectionViewFlowLayout()
     }
 }
@@ -25,7 +25,7 @@ extension AeroplaneViewController:UICollectionViewDelegate,UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let  cell=collectionView.dequeueReusableCell(withReuseIdentifier: "reusablecell", for: indexPath) as! MyCollectionViewCell
+        let  cell=collectionView.dequeueReusableCell(withReuseIdentifier: collectionviewcellidentifier, for: indexPath) as! MyCollectionViewCell
         
         cell.ImageCollectioncell.image=AeroplaneCollectionArray[indexPath.row].image
         cell.CollectionCellTextLabel.text=AeroplaneCollectionArray[indexPath.row].label
@@ -34,12 +34,13 @@ extension AeroplaneViewController:UICollectionViewDelegate,UICollectionViewDataS
 }
 extension AeroplaneViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let nbCol = 2
-            let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-            let totalSpace = flowLayout.sectionInset.left
-                + flowLayout.sectionInset.right
-                + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
-            let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
+        let size=getItemSize(collectionView: collectionView, collectionViewLayout: collectionViewLayout)
+//        let nbCol = 2
+//            let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+//            let totalSpace = flowLayout.sectionInset.left
+//                + flowLayout.sectionInset.right
+//                + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
+//            let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
             return CGSize(width: size, height: size)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

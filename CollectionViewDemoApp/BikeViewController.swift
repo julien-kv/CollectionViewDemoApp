@@ -15,7 +15,7 @@ class BikeViewController: UIViewController {
         BikeCollectionView.delegate=self
         BikeCollectionView.dataSource=self
         BikeCollectionView.collectionViewLayout=UICollectionViewFlowLayout()
-        BikeCollectionView.register(UINib(nibName: "MyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "reusablecell")
+        BikeCollectionView.register(UINib(nibName: "MyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: collectionviewcellidentifier)
     }
 }
 extension BikeViewController:UICollectionViewDelegate,UICollectionViewDataSource{
@@ -24,7 +24,7 @@ extension BikeViewController:UICollectionViewDelegate,UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "reusablecell", for: indexPath) as! MyCollectionViewCell
+        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: collectionviewcellidentifier, for: indexPath) as! MyCollectionViewCell
         cell.ImageCollectioncell.image=BikeCollectionArray[indexPath.row].image
         cell.CollectionCellTextLabel.text=BikeCollectionArray[indexPath.row].label
         
@@ -35,12 +35,8 @@ extension BikeViewController:UICollectionViewDelegate,UICollectionViewDataSource
 }
 extension BikeViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let nbCol = 2
-        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-        let totalSpace = flowLayout.sectionInset.left
-            + flowLayout.sectionInset.right
-            + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
-        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
+        
+       let size=getItemSize(collectionView: collectionView, collectionViewLayout: collectionViewLayout)
         return CGSize(width: size, height: size)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -61,4 +57,13 @@ extension BikeViewController:UICollectionViewDelegateFlowLayout{
         sender.view?.removeFromSuperview()
     }
     
+}
+func getItemSize(collectionView:UICollectionView, collectionViewLayout:UICollectionViewLayout) -> Int {
+    let nbCol = 2
+    let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+    let totalSpace = flowLayout.sectionInset.left
+        + flowLayout.sectionInset.right
+        + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
+    let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
+    return size
 }

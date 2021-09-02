@@ -11,6 +11,8 @@ struct CollectionCellDataModel {
     let image:UIImage
     let label:String
 }
+let tableviewcellIdentifier="cell"
+let collectionviewcellidentifier="reusablecell"
 
 let CarcollectionArray:[CollectionCellDataModel] =
     [

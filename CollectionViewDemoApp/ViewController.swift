@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         myTableView.layer.cornerRadius=20
         setNavBar()
         view.layer.backgroundColor=UIColor(patternImage: UIImage(named: "bg")!).cgColor
-        myTableView.register(UINib(nibName:"MyTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        myTableView.register(UINib(nibName:"MyTableViewCell", bundle: nil), forCellReuseIdentifier: tableviewcellIdentifier)
     }
     func setNavBar(){
         let backButton = UIBarButtonItem()
@@ -34,7 +34,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyTableViewCell
+        let cell=tableView.dequeueReusableCell(withIdentifier: tableviewcellIdentifier, for: indexPath) as! MyTableViewCell
         
         cell.myTextLabel.text=tabledata[indexPath.row]
         return cell
